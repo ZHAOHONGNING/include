@@ -1,0 +1,12 @@
+package com.zhao.service.imp;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.zhao.dao.UserDao;
+
+@Service
+public class UserServiceImp {
+	@Autowired
+	private UserDao userDao;
+}

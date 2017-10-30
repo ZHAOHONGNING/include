@@ -1,0 +1,11 @@
+package javaEE;
+
+public class Student extends Person{
+
+	public Student(int i) {
+		super(i);
+		
+	}
+	
+	
+}

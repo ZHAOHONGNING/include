@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.zhao.hong.yu"/>
+			<item value="com"/>
+			<item value="com.zhao.cn"/>
+			<item value="I"/>
+			<item value="W"/>
+			<item value="errtf"/>
+			<item value="reegr"/>
+			<item value="CUPID"/>
+			<item value="CPES"/>
+			<item value="com.zhao.hong"/>
+			<item value="com.zhao.hong.ning"/>
+			<item value="ewfwe"/>
+			<item value="dfbnfg"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="HUHU"/>
+			<item value="Empty"/>
+			<item value="Hello"/>
+			<item value="NING"/>
+			<item value="Love"/>
+			<item value="com.zhao"/>
+			<item value="gag"/>
+			<item value="fgafa"/>
+			<item value="com.zhao.hong"/>
+			<item value="com.zhao.cn"/>
+			<item value="Rong"/>
+			<item value="LI"/>
+			<item value="BaBa"/>
+			<item value="eeeeeref"/>
+			<item value="gfshbfg"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+			<item value="0.0.1"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.MavenProjectSelectionDialog">
+		<item value="480" key="width"/>
+		<item value="495" key="x"/>
+		<item value="0" key="y"/>
+		<item value="450" key="height"/>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
+		<item value="480" key="width"/>
+		<item value="495" key="x"/>
+		<item value="84" key="y"/>
+		<item value="450" key="height"/>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="495" key="x"/>
+		<item value="0" key="y"/>
+		<item value="590" key="height"/>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\赵洪宁\Desktop\campus"/>
+			<item value="C:\Users\赵洪宁\Desktop\1522+湘南一队+WEB应用开发类\湘南学院1号作品 Web应用开发类 可安装软件\campus"/>
+			<item value="C:\Users\赵洪宁\Desktop\1522+城南一队+WEB应用开发类\长沙理工大学城南学院1号作品 Web应用开发类 可安装软件\cnzj"/>
+			<item value="F:\百度云\CPES\项目07\cpes20170210\cpes06-user-update"/>
+			<item value="F:\百度云\CPES\项目05\cpes02-menu"/>
+			<item value="F:\百度云\CPES\项目06\cpes20170209\cpes03-user"/>
+			<item value="F:\百度云\CPES\项目04\cpes01"/>
+			<item value="F:\百度云\CPES\day03(1)\cpes0"/>
+			<item value="C:\Users\赵洪宁\Desktop\1522+城南一队+WEB应用开发类\长沙理工大学城南学院1号作品 Web应用开发类 可安装软件\CNHome"/>
+			<item value="F:\百度云\CPES\day02_0120\cpes01"/>
+			<item value="F:\百度云\CPES\day01_0119\cpes20170119\cpes01"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,18 @@
+package teamway.shenzhen;
+
+public class ZHAOThread extends Thread {
+
+	//第一步继承thread
+	//第二步，覆盖run方法
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+         System.out.println("我的方法好不好看");
+	}
+	//第三步，创建线程创建几个当前类的对象就是几个线程
+	ZHAOThread zt=new ZHAOThread();
+	ZHAOThread zt1=new ZHAOThread();
+	zt.sta
+	
+	
+}

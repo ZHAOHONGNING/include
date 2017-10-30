@@ -1,0 +1,36 @@
+package com.zhao.cn;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.activiti.engine.ProcessEngine;
+import org.activiti.engine.RepositoryService;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.repository.ProcessDefinition;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App1 {
+
+	@Test
+	public void test() {
+		// 获取spring文件
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-flow");
+		// 获取核心类对象
+		ProcessEngine pe = (ProcessEngine) context.getBean("processEngine");
+		//获取查询流程对象
+		RepositoryService repositoryService = pe.getRepositoryService();
+		ProcessDefinition pd = repositoryService.
+				createProcessDefinitionQuery().
+				processDefinitionKey("myProcess").
+				latestVersion().singleResult();
+		
+		//创建，使用流程变量
+		Map<String, Object> varmap  = new HashMap<String, Object>();
+		varmap.put("tl","huhu");
+		// 获取运行流程对象
+		RuntimeService runtimeService = pe.getRuntimeService();
+		runtimeService.startProcessInstanceById(pd.getId(), varmap);
+	}
+
+}

@@ -1,0 +1,19 @@
+package zhao_421;
+
+public class Fei {
+
+	public static void main(String[] args) {
+		int []zu= new int[20];
+	  zu[0]= 0;
+	  zu[1]=1;
+	  for(int i=2;i<20;i++){
+		  zu[i]=zu[i-1]+zu[i-2];
+	  }
+	  for(int j=1;j<=20;j++){
+		  if(j%5==0){
+			  System.out.println();
+		  }
+		  System.out.println(zu[j-1]+"");
+	  }
+	  }
+}

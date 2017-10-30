@@ -1,0 +1,14 @@
+package zhao_311;
+
+public class juxing implements View{
+
+	private int chang  = 1;
+	private int kuan  = 3;
+	juxing j = new juxing();
+	@Override
+	public void mianji() {
+		System.out.println(chang*kuan);
+		
+	}
+
+}

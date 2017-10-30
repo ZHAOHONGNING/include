@@ -1,0 +1,14 @@
+package com.atguigu.cpes.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.atguigu.cpes.service.PermissionService;
+
+@Controller
+public class PermissionController {
+
+	@Autowired
+	private PermissionService permissionService;
+	
+}

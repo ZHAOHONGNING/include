@@ -1,0 +1,47 @@
+package com.zhao;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Cart implements Serializable {
+
+	private Map<String, CartItem> map = new LinkedHashMap<>();
+	private int totalcount;
+	private double totalAmount;
+
+	//获取购物项集合
+	public List<CartItem> getCartItem(){
+		 Collection<CartItem> values = map.values();
+		 return new ArrayList<>(values);
+		
+	}
+	/*
+	 * 清空购物车
+	 */
+	public void clear() {
+		map.clear();
+	}
+	/*
+	 * 更新购物车
+	 */
+	public  Map<String, CartItem> update(){
+		
+		
+	}
+	public Map<String, CartItem> getMap() {
+		return map;
+	}
+	
+	public int getTotalcount() {
+		return totalcount;
+	}
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+}

@@ -1,0 +1,14 @@
+package teamway.shenzhen.db;
+
+import java.sql.Connection;
+
+public class TestClient {
+	public static void main(String[] args) {
+
+		Connection c = JdbcUtils.getConnection("127.0.0.1", 3306, "root", "74110", "test", 3,10);
+		System.out.println(c);
+//		DBClient db=new dbClientImp();
+//		db.initDB("127.0.0.1", 3306, "root", "74110", "test", 3,10);
+		
+	}
+}

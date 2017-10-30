@@ -1,0 +1,16 @@
+package com.zhao.util;
+
+import java.sql.Connection;
+
+import javax.sql.DataSource;
+
+public class JDBCUtil {
+
+	private DataSource datasource = new compol
+	//获取数据库的连接
+		public static Connection getConnection(Connection connection){
+			
+			return null;
+		}
+
+}

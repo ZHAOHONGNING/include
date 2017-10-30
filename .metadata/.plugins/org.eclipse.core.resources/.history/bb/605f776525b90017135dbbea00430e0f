@@ -1,0 +1,18 @@
+package com.zhao.teamway;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+public class LogTest {
+
+	public static void main(String[] args) throws SecurityException, IOException {
+         String[] a = {"erf","fa","af","dasf","af","af"};
+		Log log = new Log();
+		String path = "E:\\";
+		boolean b = log.initLog(path, "huhu", Level.ALL, 1800, 30);
+	log.writeLog( Level.WARNING,a);
+//		log.resetLevel(Level.ALL);
+//		log.writeLog( Level.WARNING,a);
+System.out.println(b);
+	}
+}

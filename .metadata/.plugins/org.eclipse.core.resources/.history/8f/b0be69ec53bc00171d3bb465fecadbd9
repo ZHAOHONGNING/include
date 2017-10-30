@@ -1,0 +1,23 @@
+package teamway.shenzhen.db;
+
+import org.junit.Test;
+
+public class WOtest implements Runnable {
+	WOtest w=new WOtest();
+	public static void main(String[] args) {
+		DBClient db = new dbClientImp();
+
+		for (int i = 0; i <= 5; i++) {
+
+			Thread t = new Thread(w);
+			t.start();
+		}
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}

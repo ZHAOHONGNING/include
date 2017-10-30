@@ -1,0 +1,25 @@
+content_assist_autoactivation=true
+content_assist_autoactivation_triggers_javadoc=zjs
+eclipse.preferences.version=1
+fontPropagated=true
+hoverModifierMasks=org.eclipse.wst.jsdt.ui.BestMatchHover;0;org.eclipse.wst.jsdt.debug.ui.variable.value.hover;0;org.eclipse.wst.jsdt.ui.ProblemHover;0;org.eclipse.wst.jsdt.ui.NLS;0;org.eclipse.wst.jsdt.ui.JavadocHover;0;org.eclipse.wst.jsdt.ui.JavaSourceHover;131072;
+hoverModifiers=org.eclipse.wst.jsdt.ui.BestMatchHover;0;org.eclipse.wst.jsdt.debug.ui.variable.value.hover;\!0;org.eclipse.wst.jsdt.ui.ProblemHover;\!0;org.eclipse.wst.jsdt.ui.NLS;\!0;org.eclipse.wst.jsdt.ui.JavadocHover;\!0;org.eclipse.wst.jsdt.ui.JavaSourceHover;Shift;
+org.eclipse.jface.textfont=1|\u4EFF\u5B8B|18.0|1|WINDOWS|1|-24|0|0|0|700|0|0|0|0|3|2|1|49|\u4EFF\u5B8B;
+org.eclipse.wst.jsdt.internal.ui.navigator.layout=1
+org.eclipse.wst.jsdt.ui.editor.tab.width=
+org.eclipse.wst.jsdt.ui.exception.name=e
+org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
+org.eclipse.wst.jsdt.ui.gettersetter.use.is=true
+org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+org.eclipse.wst.jsdt.ui.text.code_templates_migrated=true
+org.eclipse.wst.jsdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.wst.jsdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.wst.jsdt.ui.text.templates_migrated=true
+org.eclipse.wst.jsdt.ui.visibility.order=B,V,R,D,
+outlinesortoption=T,I,F,C,M,
+packageview.doubleclick=packageview.gointo
+proposalOrderMigrated=true
+sourceHoverBackgroundColor=255,255,225
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

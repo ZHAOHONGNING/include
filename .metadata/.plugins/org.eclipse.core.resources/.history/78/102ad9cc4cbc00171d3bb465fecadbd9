@@ -1,0 +1,36 @@
+package teamway.shenzhen.db;
+
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+import java.util.List;
+
+import org.junit.Test;
+
+public class Itest {
+
+	// 测试query
+	@Test
+	public void test1() {
+		DBClient db = new dbClientImp();
+		String sql1 = "select * from huhu ";
+		db.initDB("127.0.0.1", 3306, "root", "74110", "test", 3, 10);
+		 Object[] queryObject = db.queryObject(sql1);
+		for (Object object : queryObject) {
+			System.out.println(object);
+		}
+		}
+	
+
+	// 测试executenonequery
+	@Test
+	public void test() {
+		Connection c = JdbcUtils.getConnection("127.0.0.1", 3306, "root", "74110", "test", 3, 10);
+		DBClient db = new dbClientImp();
+		db.initDB("127.0.0.1", 3306, "root", "74110", "test", 3, 10);
+		String sql = "INSERT INTO huhu (id,girlname)VALUES(8,'wodetianan怎么会这样')";
+		boolean b = db.executeNoneQuery(sql);
+		System.out.println(b);
+	}
+	}
+

@@ -1,0 +1,10 @@
+package zhao;
+
+public class Person {
+	public String test(){
+		return "hahahahahah";
+		
+		
+	}
+
+}

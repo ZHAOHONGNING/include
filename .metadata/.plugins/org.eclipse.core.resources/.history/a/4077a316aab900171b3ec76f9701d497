@@ -1,0 +1,12 @@
+package com.teamway.util;
+
+import java.io.File;
+
+public class dghfbfdshrfh {
+public static void main(String[] args) {
+
+	StringBuffer sb = new StringBuffer("dsfsd");
+	
+	System.out.println(sb);
+}
+}

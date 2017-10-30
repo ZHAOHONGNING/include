@@ -1,0 +1,11 @@
+package com.huhu;
+
+public class TestHUHUinf implements TestHuhu{
+
+	@Override
+	public String getFile() {
+		System.out.println("EN");
+		return "I LOVE YOU ";
+	}
+
+}

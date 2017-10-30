@@ -1,0 +1,37 @@
+package com.zhao.pojo;
+
+public class Order {
+
+	private Integer orderId;
+	private String ordername;
+	
+	//用来描述多对一的关联
+	private User user ;
+
+	public Integer getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getOrdername() {
+		return ordername;
+	}
+
+	public void setOrdername(String ordername) {
+		this.ordername = ordername;
+	}
+
+	public Order(Integer orderId, String ordername) {
+		super();
+		this.orderId = orderId;
+		this.ordername = ordername;
+	}
+
+	public Order() {
+		super();
+	}
+	
+}

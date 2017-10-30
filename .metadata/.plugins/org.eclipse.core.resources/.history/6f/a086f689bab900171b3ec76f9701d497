@@ -1,0 +1,28 @@
+package com.teamway.util;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+public class LogTest {
+
+	public static void main(String[] args) throws Exception {
+		String path = "E:\\DoyoGames\\Games\\";
+
+		LINWEILOG linwei=new LINWEILOG();
+		linwei.initLog(path, "hu.log", 1,1024*1024, 1024);
+		for(int i=0;i<100;i++){
+			
+			linwei.writeLog(2, "dsfsdfsg");
+			linwei.writeLog(4, "dsfsdfsg");
+			linwei.writeLog(4, "dsfsdfsg");
+			linwei.writeLog(4, "dsfsdfsg");
+			linwei.writeLog(4, "dsfsdfsg");
+		}
+//		Log log = new Log();
+//		log.initLog(path, "wei.log", Level.ALL, 20, 1);
+//		for(int i=0;i<90;i++){
+//			
+//			log.writeLog(Level.CONFIG, "fds");
+//		}
+	}
+}

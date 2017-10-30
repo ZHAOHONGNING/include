@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    
+    	<!-- 连接数据库信息（被Spring框架管理C3P0所取代） -->
+    	
+    	<!-- 方言 -->
+    	<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+    	
+    	<!-- 其他 -->
+    	<property name="hibernate.show_sql">true</property>
+    	<property name="hibernate.format_sql">true</property>
+    	<property name="hibernate.hbm2ddl.auto">update</property>
+    
+    	<!-- 映射配置管理
+    		 Hibernate框架中加载映射配置，不支持通配符方式加载，所以，文件比较多时比较麻烦，所以，将其交给spring来加载管理
+    	 -->
+    	<!-- <mapping resource="com/atguigu/sh/pojo/User.hbm.xml"/> -->
+    
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,8 @@
+package sysout;
+
+public class outprintln {
+	public void test(){
+		System.out.println();
+	}
+
+}

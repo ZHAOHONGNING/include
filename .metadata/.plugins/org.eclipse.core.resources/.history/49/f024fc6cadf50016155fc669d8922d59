@@ -1,0 +1,48 @@
+package com.zhao.pojo.UTIL;
+
+import static org.junit.Assert.*;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.zhao.pojo.Book;
+
+public class TestSession {
+	SessionFactory sessionfactory;
+	Session session;
+	Transaction tx;
+
+	@Before
+	public void setup() {
+		// 加载默认文件配置
+		Configuration cfg = new Configuration();
+		cfg.configure();
+		ServiceRegistryBuilder srb = new ServiceRegistryBuilder();
+		srb.applySettings(cfg.getProperties());
+		ServiceRegistry sr = srb.buildServiceRegistry();
+		sessionfactory = cfg.buildSessionFactory(sr);
+		session = sessionfactory.openSession();
+		 tx = session.beginTransaction();
+	}
+	@After
+	public void tearDown(){
+		tx.commit();
+		session.close();
+		sessionfactory.close();
+	}
+
+	@Test
+	public void testGetSession() {
+         Book book = (Book) session.get(Book.class, 1);
+	     System.out.println(book);
+	     book.setName("C++");
+	}
+
+}

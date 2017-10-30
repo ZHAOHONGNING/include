@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.cpes.dao.UserDao">
+	<delete id="deleteUserById" resultType="Integer" > 
+     delete * from t_user where id=#{id}
+	</delete>
+
+	<select id="queryUserById" resultType="user">
+		select * from t_user where id = #{id}
+	</select>
+
+	<select id="queryUser4Page" resultType="user">
+		select * from t_user
+		<where>
+			<if test="qname != null">
+				and username like concat('%', #{qname}, '%')
+			</if>
+		</where>
+		order by createtime desc
+		limit #{start}, #{pagesize}
+	</select>
+
+	<select id="queryUserCount4Page" resultType="int">
+		select count(*) from t_user
+		<where>
+			<if test="qname != null">
+				and username like concat('%', #{qname}, '%')
+			</if>
+		</where>
+	</select>
+
+	<select id="queryUser4Login" resultType="user">
+		select * from t_user where loginacct = #{loginacct} and userpswd =
+		#{userpswd}
+	</select>
+
+	<insert id="insertUser">
+		insert into t_user (
+		loginacct,userpswd,email,sex,username,createtime
+		) values (
+		#{loginacct},#{userpswd},#{email},#{sex},#{username},#{createtime}
+		)
+	</insert>
+
+	<update id="updateUser">
+		update t_user
+		set
+		loginacct = #{loginacct},
+		username = #{username},
+		email = #{email},
+		sex = #{sex}
+		where id = #{id}
+	</update>
+
+
+</mapper>

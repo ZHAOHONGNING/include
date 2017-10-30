@@ -1,0 +1,20 @@
+package zhao_311;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+
+import sun.applet.Main;
+
+public class BankTeller {
+
+	public static void serve(Teller t, Customer c) {
+		System.out.println(t + "serve" + c);
+	}
+
+	public static void main(String[] args) {
+           
+		Random rand = new Random(45);
+		Queue<Customer> list = new LinkedList<Customer>();
+	}
+}

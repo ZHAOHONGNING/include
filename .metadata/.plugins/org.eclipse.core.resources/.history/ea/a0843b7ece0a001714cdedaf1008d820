@@ -1,0 +1,52 @@
+package com.zhao.cn;
+
+import java.beans.PropertyVetoException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+/*
+ * 
+			dataSource.setDriverClass("com.mysql.jdbcDriver");
+		} catch (PropertyVetoException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("有毛病");
+		}
+		dataSource.setInitialPoolSize(4);
+		dataSource.setMaxPoolSize(45);
+		
+ */
+public class JdbcUtil {
+	
+	public static void save(Dept dept){
+		String sql = "insert into t_dept (deptId,deptName)values(?,?)";
+		ComboPooledDataSource c = new ComboPooledDataSource();
+		try {
+			c.setDriverClass("com.mysql.jdbc.Driver");
+		} catch (PropertyVetoException e) {
+			// TODO Auto-generated catch block
+			System.out.println("error////////////////");
+		}
+		c.setUser("root");
+		c.setJdbcUrl("jdbc:mysql://localhost/hibernate");
+		c.setInitialPoolSize(4);
+		c.setMaxPoolSize(78);
+		c.setPassword("74110");
+		try {
+			Connection connection = c.getConnection();
+			PreparedStatement p = connection.prepareStatement(sql);
+			p.setInt(1, dept.getId());
+			p.setString(2, dept.getName());
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("error////////////////");
+		}
+	}
+
+}

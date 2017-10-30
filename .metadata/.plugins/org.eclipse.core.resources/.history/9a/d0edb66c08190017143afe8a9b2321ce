@@ -1,0 +1,34 @@
+package zhao_311;
+
+
+public class Student extends Thread {
+	private String name;
+	public Student(String name) {
+		this.name=name;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		show();
+	show();
+	}
+	
+	public void show(){
+		for(int i=0;i<12;i++){
+			System.out.println(name+i);
+		}
+	}
+	
+		
+	
+	public static void main(String[] args) {
+	Student s1 = new Student("zhangsan");	
+	Student s2 = new Student("lisis");	
+	s1.start();
+	s2.start();
+	
+	
+	
+	}
+
+}

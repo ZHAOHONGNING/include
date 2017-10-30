@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.zhao.util&apos; to &apos;Hibernate_3_3/src/com.atguigu.mapping.bean&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate_check&apos;&#x0D;&#x0A;- Destination element: &apos;Hibernate_3_3/src/com.atguigu.mapping.bean&apos;&#x0D;&#x0A;- Original element: &apos;Hibernate_check/src/com.zhao.util&apos;" description="Copy package" destination="=Hibernate_3_3/src&lt;com.atguigu.mapping.bean" element1="/src&lt;com.zhao.util" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1488505345608" version="1.0"/>
+</session>

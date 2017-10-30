@@ -1,0 +1,106 @@
+package teamway.shenzhen.db;
+
+import java.beans.PropertyVetoException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ArrayHandler;
+import org.apache.commons.dbutils.handlers.ArrayListHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.mchange.v1.util.ArrayUtils;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+public class dbClientImp implements DBClient {
+
+	private String ip;
+	private String user;
+	private String password;
+	private String dbInstance;
+	private long port;
+	private int initialPoolSize;
+	private int maxPoolSize;
+
+	@Override
+	public boolean initDB(String ip, long port, String user, String password, String dbInstance, int initialPoolSize,
+			int maxPoolSize) {
+		this.ip = ip;
+		this.port = port;
+		this.user = user;
+		this.password = password;
+		this.dbInstance = dbInstance;
+		this.initialPoolSize = initialPoolSize;
+		this.maxPoolSize = maxPoolSize;
+		return true;
+	}
+
+	@Override
+	public boolean executeNoneQuery(String sql) {
+		// 更新删除添加功能
+		int i = 0;
+		Connection conn = null;
+		conn = JdbcUtils.getConnection(ip, port, user, password, dbInstance, initialPoolSize, maxPoolSize);
+		QueryRunner qr = new QueryRunner();
+		try {
+			i = qr.update(conn, sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (i != 0) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return true;
+			
+		}
+		return false;
+	}
+
+	@Override
+	public  Object[] queryObject(String sql) {
+		ArrayList<Object> list = new ArrayList<>();
+		QueryRunner qr = new QueryRunner();
+		ArrayListHandler handler = new ArrayListHandler();
+		Connection conn = null;
+		try {
+			synchronized (this) {
+				
+				conn = JdbcUtils.getConnection(ip, port, user, password, dbInstance, initialPoolSize, maxPoolSize);
+				List<Object[]> query = qr.query(conn, sql, handler);
+				for (Object[] objects : query) {
+					for (Object object : objects) {
+						list.add(object);
+					}
+				}
+			}
+
+			Object[] array = list.toArray();
+			return array;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("sgg");
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+}

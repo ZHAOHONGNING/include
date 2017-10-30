@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   window.onload = function(){
+	  // alert("helloword");
+	  // var liNodes = document.getElementById("bj");
+	  // alert(liNodes);
+	   //根据标签名获取元素节点，
+	   //加S因为返回值是一个数组或者集合不是一个
+	   //var linodes = document.getElementsByTagName("li");
+	  // alert(linodes.length);
+	   //根据名字获取
+	   var gender = document.getElementsByName("gender");
+	   alert(gender.length);
+	   
+	   
+	   
+   }
+
+</script>
+</head>
+<body>
+       <p>你喜欢哪个城市</p>
+       <ul id = "city">
+       <li id = "bj" name = "beijiang">北京</li>
+       <li>上海</li>
+       <li>东京</li>
+       <li>天津</li>
+       <li>黑龙江</li>
+       </ul>
+       <br><br>
+       <p>你喜欢哪款单机游戏</p>
+       <ul id = "game" >
+       <li>黑道</li>
+        <li>使命</li>
+        <li>二战</li>
+       </ul>
+       
+       <br><br>
+       gender:
+       <input type= "radio" name = "gender" value = "male"/>
+       <input type= "radio" name = "gender" value = "famale"/>
+        <br><br>
+       name:
+       <input type = "text" name = "gender" value = "赵洪宇"/> 
+
+</body>
+</html>

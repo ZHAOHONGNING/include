@@ -1,0 +1,25 @@
+package zhao_311;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Customer {
+	private static long counter = 1;
+	private final long id = counter++;
+	@Override
+	public String toString() {
+		return "Customer"+id;
+	}
+	private Customer(){
+		
+	}
+	public static Set<Customer> getset(){
+		
+		return new HashSet<Customer>();
+	}
+	
+	public Customer next(){
+		return new Customer();
+	}
+
+}

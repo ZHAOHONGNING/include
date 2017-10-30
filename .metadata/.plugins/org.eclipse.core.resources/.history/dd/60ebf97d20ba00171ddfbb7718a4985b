@@ -1,0 +1,31 @@
+package teamway.shenzhen;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class ZHAOThreadTest extends Thread {
+
+	java.util.Date date=new Date();
+	
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		sdf.
+	// 第一步继承thread
+	// 第二步，覆盖run方法
+	@Override
+	public void run() {
+			sdf.format(date);
+		// TODO Auto-generated method stub
+		for (int i = 0; i < 110; i++) {
+           System.out.println(this.getName()+":"+i);
+		}
+	}
+
+	public static void main(String[] args) {
+
+		// 第三步，创建线程创建几个当前类的对象就是几个线程
+		ZHAOThreadTest zt = new ZHAOThreadTest();
+		ZHAOThreadTest zt1 = new ZHAOThreadTest();
+		zt1.start();
+		zt.start();
+	}
+}

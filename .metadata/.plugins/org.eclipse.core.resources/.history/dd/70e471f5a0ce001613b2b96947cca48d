@@ -1,0 +1,38 @@
+package com.zhao.imp;
+
+import com.zhao.Dao.BaseDao;
+import com.zhao.Dao.UserDao;
+import com.zhao.bean.User;
+
+public class UserDaoImp extends BaseDao<User> implements UserDao {
+
+	private UserDao userdao = new UserDaoImp();
+
+	@Override
+	public User login(User user) {
+		String sql = "select * from users";
+		User bean = getBean(sql, user.getId(), user.getUsername(), user.getEmail(), user.getPassword());
+		return bean;
+	}
+
+	@Override
+	/*
+	 * 空表示可以注册 返回false代表用户已经存在 (non-Javadoc)
+	 * 
+	 * @see com.zhao.Dao.UserDao#regist(com.zhao.bean.User)
+	 */
+	public boolean regist(User user) {
+		String sql = "select username from users where useranme = ?";
+		User bean = getBean(sql, user.getUsername());
+		return bean == null;
+	}
+
+	@Override
+	public void save(User user) {
+		// TODO Auto-generated method stub
+
+		String sql = "insert into users(username,id,email,password)values(?,?,?,?)";
+		upData(sql,  user.getUsername(), user.getEmail(), user.getPassword());
+	}
+
+}

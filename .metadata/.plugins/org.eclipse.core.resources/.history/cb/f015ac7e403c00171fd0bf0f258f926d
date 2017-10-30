@@ -1,0 +1,15 @@
+package com.atguigu.cpes.servic;
+
+import java.util.List;
+
+import com.atguigu.cpes.bean.Permission;
+
+public interface PermissionService {
+
+	List<Permission> queryAll();
+
+	void addPermission(Permission permission);
+
+	Permission queryById(Integer id);
+
+}

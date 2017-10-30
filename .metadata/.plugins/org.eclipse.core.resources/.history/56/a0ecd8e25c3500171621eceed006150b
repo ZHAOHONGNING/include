@@ -1,0 +1,76 @@
+package com.atguigu.cpes.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.atguigu.cpes.bean.User;
+import com.atguigu.cpes.service.UserService;
+import com.atguigu.cpes.util.MD5Util;
+
+/**
+ * 用户控制器
+ * @author 18801
+ *
+ */
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+	@Autowired
+	private UserService userSevice;
+	
+	/**
+	 * 用户登录，查询用户信息
+	 * @return
+	 */
+//	@RequestMapping("/dologin")
+//	public String dologin( User user, Model model ) {
+//		
+//		// 获取请求参数
+//		
+//		// 调用服务对象,查询用户信息
+//		User dbUser = userSevice.queryUser4Login(user);
+//		
+//		// 对查询结果进行有效性验证
+//		if ( dbUser == null ) {
+//			model.addAttribute("errorMsg", "用户信息不存在，请重新登陆");
+//			return "login";
+//		} else {
+//			return "redirect:/main.htm";
+//		}
+//	}
+	/**
+	 * 使用AJAX实现用户登录，查询用户信息
+	 * 
+	 * ResponseBody注解表示将当前方法的返回数据作为响应体的内容，因为在配置文件中已经对返回结果的类型进行了配置，所以方法执行后
+	 *             会将返回对象自动转换为JSON格式的字符串
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/dologin")
+	public Object dologin(User user, Model model, HttpSession session) {
+		// Model数据存储范围为request
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		// map ==> JSON ==> { key : value }
+		// List ==> JSON ==> []
+		// 查询数据之前，应该将密码进行加密后和数据库进行匹配
+		User dbUser = userSevice.queryUser4Login(user);
+		if ( dbUser == null ) {
+			resultMap.put("success", false);
+		} else {
+			session.setAttribute("dbUser", dbUser);
+			resultMap.put("success", true);
+		}
+		
+		return resultMap;
+	}
+	
+}

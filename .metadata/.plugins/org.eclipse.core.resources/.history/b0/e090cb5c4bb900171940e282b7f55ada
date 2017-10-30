@@ -1,0 +1,9 @@
+package c0m.teamway.zhao;
+
+import java.io.File;
+
+public class ZHAOFile {
+
+	String path = "E:\\DoyoGames\\Games";
+	File file =new File(path,"huhu");
+}

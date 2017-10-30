@@ -1,0 +1,27 @@
+package com.zhao.imp;
+
+import com.zhao.bean.User;
+import com.zhao.service.UserService;
+
+public class UserServiceImp  implements UserService {
+private UserService userservice = new UserServiceImp();
+	@Override
+	public User login(User user) {
+		User login = login(user);
+		return login;
+	}
+
+	@Override
+	public boolean regist(User user) {
+		boolean b = regist(user);
+		return b;
+	}
+
+	@Override
+	public void save(User user) {
+
+		save(user);
+		
+	}
+
+}

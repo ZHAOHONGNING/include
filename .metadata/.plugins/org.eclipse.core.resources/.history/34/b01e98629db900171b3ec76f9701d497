@@ -1,0 +1,12 @@
+package com.teamway.util;
+
+import java.io.File;
+
+public class dghfbfdshrfh {
+public static void main(String[] args) {
+	File file = new File("E:\\DoyoGames\\Games\\huhu.log");
+	File file1 = new File("E:\\DoyoGames\\Games\\h.log");
+	boolean renameTo = file.renameTo(file1);
+	System.out.println(renameTo);
+}
+}

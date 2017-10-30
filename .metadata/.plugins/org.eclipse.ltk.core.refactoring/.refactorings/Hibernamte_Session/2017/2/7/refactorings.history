@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TestSession.java&apos; to &apos;Hibernate_o4/src/com.zhao.pojo&apos;&#x0D;&#x0A;- Original project: &apos;Hibernamte_Session&apos;&#x0D;&#x0A;- Destination element: &apos;Hibernate_o4/src/com.zhao.pojo&apos;&#x0D;&#x0A;- Original element: &apos;com.zhao.pojo.UTIL.TestSession.java&apos;" description="Copy compilation unit" destination="=Hibernate_o4/src&lt;com.zhao.pojo" element1="/src&lt;com.zhao.pojo.UTIL{TestSession.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1487403588818" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,39 @@
+package zhao.hong.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import zhao.hong.bean.Student;
+
+public class Servlet_jsp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		List<Student> list = new ArrayList<>();
+		list.add(new Student(1, 12, "aa", "nan"));
+		list.add(new Student(2, 10, "ba", "nan"));
+		list.add(new Student(3, 18, "ra", "nan"));
+		list.add(new Student(4, 16, "ta", "nan"));
+		list.add(new Student(5, 17, "fa", "nan"));
+
+		// 将list放进request域中
+		request.setAttribute("list", list);
+		// 转发到要显示的学生界面
+		request.getRequestDispatcher("/index.jsp").
+		forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

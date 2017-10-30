@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyCallBack.java&apos; to &apos;HUHU-MALL/src/main/java/com.zhao.util&apos;&#x0D;&#x0A;- Original project: &apos;HUHU-MALL&apos;&#x0D;&#x0A;- Destination element: &apos;HUHU-MALL/src/main/java/com.zhao.util&apos;&#x0D;&#x0A;- Original element: &apos;com.zhao.util.MyCallBack.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;com.zhao.util" element1="/src\/main\/java&lt;com.zhao.util{MyCallBack.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1505297667039" units="1" version="1.0"/>
+</session>

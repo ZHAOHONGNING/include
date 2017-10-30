@@ -1,0 +1,7 @@
+package com.zhao.cn;
+
+public class Snippet {
+	SELECT * FROM person LIMIT 0,5;
+	
+}
+

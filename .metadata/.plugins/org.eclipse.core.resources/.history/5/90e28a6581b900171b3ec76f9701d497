@@ -1,0 +1,16 @@
+package com.zhao.teamway;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+public class LogTest {
+
+	public static void main(String[] args) throws SecurityException, IOException {
+		String path = "E:\\DoyoGames\\Games\\";
+
+		Log log = new Log();
+		log.initLog(path, "huhu.log", Level.ALL, 509, 1);
+		String[] temp = { "dsfsd", "fssd" };
+		log.writeLog(Level.ALL, temp);
+	}
+}

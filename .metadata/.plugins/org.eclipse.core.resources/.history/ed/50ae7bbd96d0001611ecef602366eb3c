@@ -1,0 +1,46 @@
+package com.zhao.Dao;
+
+import java.util.List;
+
+import com.zhao.bean.Book;
+import com.zhao.bean.Pages;
+
+public class BookDaoImp implements BookDao {
+
+	@Override
+	public List<Book> getBooks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addBook(Book book) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Book book) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Book getBook(String bookId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteBook(String bookId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Pages<Book> getPageBook(Pages<Book> book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

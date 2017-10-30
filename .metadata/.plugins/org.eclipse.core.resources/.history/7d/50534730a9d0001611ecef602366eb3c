@@ -1,0 +1,75 @@
+package com.zhao.Dao;
+
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.ResultSetHandler;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.zhao.util.JDBCUtil;
+
+//其实他最后是想获取自己的类型吗
+public class BaseDao<T> {
+	// 数据的增删改查需要调用queryRunner类
+	private QueryRunner queryrunner = new QueryRunner();
+
+	private Class<T> type;
+
+	// 考虑到查询的类型type需要
+	public BaseDao() {
+		Class clazz = this.getClass();
+		// 获取带泛型的类型
+		ParameterizedType pt = (ParameterizedType) clazz.getGenericSuperclass();
+		// 获取具体的带泛型的类型
+		Type[] actualTypeArguments = pt.getActualTypeArguments();
+		// 获取具体的泛型的类型·最后证明他俩是一个类型
+		this.type = (Class<T>) actualTypeArguments[0];
+	}
+
+	// 数据的增删改操作
+	// 增删改简单就是查询最麻烦
+	public int upData(String sql, Object... param) {
+		Connection connection = JDBCUtil.getConnection();
+		int i = 0;
+		try {
+			queryrunner.update(sql, param);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+	}
+
+	// 数据的查询，这是获取一个对象
+	public T getBean(String sql,Object...param){
+        	Connection connection = JDBCUtil.getConnection();
+        	T t = null;;
+			try {
+				t = queryrunner.query(connection, sql, new BeanHandler<>(type), param);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        return t;	
+	}
+	//获取全部对象
+	 public List<T> getListBean(String sql,Object...param){
+		 Connection connection = JDBCUtil.getConnection();
+		 List<T> query =null;
+	    	try {
+				 queryrunner.query(connection,sql, new BeanListHandler<T>(type), param	);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	
+	    	return query;
+	    }   
+		
+	
+}

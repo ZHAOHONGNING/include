@@ -1,0 +1,40 @@
+package com.zhao.cn;
+
+import java.io.IOException;
+import java.io.Serializable;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class GongFu
+ */
+public class GongFu extends HttpServlet implements Serializable {
+	private static final long serialVersionUID = 1L;
+   
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String param = request.getParameter("token");
+		HttpSession session = request.getSession();
+		Object object = session.getAttribute("token");
+		
+		if(param.equals(object)){
+			//相等证明是第一次提交
+			//移除token
+			session.removeAttribute("token");
+			response.sendRedirect("index.jsp");
+			
+		}else{
+			//提交到错误界面
+		}
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

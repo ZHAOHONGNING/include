@@ -1,0 +1,12 @@
+package teamway.shenzhen.db;
+
+import java.util.List;
+
+public interface DBClient {
+
+	boolean initDB(String ip, long port, String user, String password, String dbInstance,int initialPoolSize,int maxPoolSize);
+
+	boolean executeNoneQuery(String sql);
+
+	List<Object[]> queryObject(String sql);
+}

@@ -1,0 +1,16 @@
+package com.zhao.util;
+
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+
+public class TESTservice {
+
+	public static<T> T getService(String url,Class<T> t){
+		JaxWsProxyFactoryBean jaxws= new JaxWsProxyFactoryBean();
+		jaxws.setAddress(url);
+		T create = jaxws.create(t);
+		//最终结构就是返回之前发布时候创建的对象
+		//因为有对象就可以调用方法了
+		create.
+		return create;
+	}
+}

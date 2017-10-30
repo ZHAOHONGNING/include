@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;teamway.shenzhen.ZHAOThread.java&apos; to &apos;ZHAOThreadTest.java&apos;&#x0D;&#x0A;- Original project: &apos;ThreadTest&apos;&#x0D;&#x0A;- Original element: &apos;teamway.shenzhen.ZHAOThread.java&apos;&#x0D;&#x0A;- Renamed element: &apos;teamway.shenzhen.ZHAOThreadTest.java&apos;" description="Rename compilation unit &apos;ZHAOThread.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;teamway.shenzhen{ZHAOThread.java" name="ZHAOThreadTest.java" references="false" stamp="1509002642725" version="1.0"/>
+</session>

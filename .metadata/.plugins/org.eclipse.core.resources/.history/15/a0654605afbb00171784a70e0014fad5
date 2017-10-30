@@ -1,0 +1,86 @@
+package teamway.shenzhen.db;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ArrayHandler;
+import org.apache.commons.dbutils.handlers.ArrayListHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.mchange.v1.util.ArrayUtils;
+
+public class dbClientImp implements DBClient {
+
+	Connection c = null;
+	// dbutil工具类的创建
+	QueryRunner qr = new QueryRunner();
+
+	@Override
+	public boolean initDB(String ip, long port, String user, String password, String dbInstance, int initialPoolSize,
+			int maxPoolSize) {
+		c = JdbcUtils.getConnection(ip, port, user, password, dbInstance, initialPoolSize, maxPoolSize);
+		// String jdbcUrl="jdbc:mysql://"+"ip"+":"+port+"/"+dbInstance;
+		// // 获取连接对象
+		// ComboPooledDataSource c = new ComboPooledDataSource();
+		// c.setUser(user);
+		// c.setPassword(password);
+		//
+		// try {
+		// c.setDriverClass("com.mysql.jdbc.Driver");
+		// } catch (PropertyVetoException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		// c.setJdbcUrl(jdbcUrl);
+		// c.setInitialPoolSize(initialPoolSize);
+		// c.setMaxPoolSize(maxPoolSize);
+		// c.setAutoCommitOnClose(true);
+
+		return true;
+	}
+
+	@Override
+	public boolean executeNoneQuery(String sql) {
+		// 更新删除添加功能
+		int i = 0;
+		try {
+			i = qr.update(c, sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (i != 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public Object[] queryObject(String sql) {
+		ArrayListHandler handler = new ArrayListHandler();
+		ArrayList<Object> list = new ArrayList<>();
+		try {
+			List<Object[]> query = qr.query(c, sql, handler);
+			for (Object[] objects : query) {
+				for (Object object : objects) {
+					list.add(object);
+				}
+			}
+			Object[] array = list.toArray();
+			return array;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("sgg");
+		}
+		return null;
+
+	}
+}

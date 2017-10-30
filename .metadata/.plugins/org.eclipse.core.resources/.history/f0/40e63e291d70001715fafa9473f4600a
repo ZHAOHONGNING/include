@@ -1,0 +1,51 @@
+package com.zhao.cn;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.activiti.engine.ProcessEngine;
+import org.activiti.engine.RepositoryService;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.history.HistoricProcessInstance;
+import org.activiti.engine.history.HistoricProcessInstanceQuery;
+import org.activiti.engine.repository.ProcessDefinition;
+import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.task.Task;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App1 {
+
+	@Test
+	public void test() {
+		// 获取spring文件
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-flow");
+		// 获取核心类对象
+		ProcessEngine pe = (ProcessEngine) context.getBean("processEngine");
+		// 获取查询流程对象
+		RepositoryService repositoryService = pe.getRepositoryService();
+		ProcessDefinition pd = repositoryService.createProcessDefinitionQuery().processDefinitionKey("myProcess")
+				.latestVersion().singleResult();
+
+		// 创建，使用流程变量
+		Map<String, Object> varmap = new HashMap<String, Object>();
+		varmap.put("tl", "huhu");
+		// 获取运行流程对象
+		RuntimeService runtimeService = pe.getRuntimeService();
+		// 获取流程实例
+
+		ProcessInstance pi = runtimeService.startProcessInstanceById(pd.getId(), varmap);
+		List<Task> list = pe.getTaskService().createTaskQuery().taskTenantId(pi.getId()).list();
+		for (Task task : list) {
+			System.out.println(task.getId() + "名字是" + task.getName());
+			pe.getTaskService().complete(task.getId());
+		}
+		// 开启历史流程
+		HistoricProcessInstance hpi = pe.getHistoryService().createHistoricProcessInstanceQuery().
+		         processInstanceId(pi.getId()).finished()
+				.singleResult();
+
+	}
+
+}

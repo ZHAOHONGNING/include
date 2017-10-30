@@ -1,0 +1,31 @@
+package zhao_311;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Teller  {
+
+	
+	Teller get(){
+		
+		return null;
+	};
+	
+	private static long counter = 1;
+	private final long id = counter++;
+	@Override
+	public String toString() {
+		return "Teller"+id;
+	}
+	private Teller(){
+		
+	}
+public static Set<Teller> getset(){
+		
+		return new HashSet<Teller>();
+	}
+	
+	public Teller next(){
+		return new Teller();
+	}
+}

@@ -1,0 +1,43 @@
+package com.zhao;
+
+import com.sun.javafx.collections.MappingChange.Map;
+
+public class Cart {
+	
+	private Map<Integer, CartItem> map;
+	private int totalcount;
+	private double totalAmount;
+	@Override
+	public String toString() {
+		return "Cart [map=" + map + ", totalcount=" + totalcount + ", totalAmount=" + totalAmount + "]";
+	}
+	public Map<Integer, CartItem> getMap() {
+		return map;
+	}
+	public void setMap(Map<Integer, CartItem> map) {
+		this.map = map;
+	}
+	public int getTotalcount() {
+		return totalcount;
+	}
+	public void setTotalcount(int totalcount) {
+		this.totalcount = totalcount;
+	}
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	public Cart(Map<Integer, CartItem> map, int totalcount, double totalAmount) {
+		super();
+		this.map = map;
+		this.totalcount = totalcount;
+		this.totalAmount = totalAmount;
+	}
+	public Cart() {
+		super();
+	}
+	
+
+}

@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="div">
+		<!-- 这是我封装的图片,辛苦泡椒姐姐了 -->
+		<img src="qq.png" alt="扫一扫" id="sao" style="display: none" />
+	</div>
+	</tr>
+								<tr>
+								<td>1</td>
+								<td>309</td>
+								<td>赵洪宁</td>
+								<td>18397856789</td>
+								<td>康复2班</td>
+								<td>74</td>
+								<td>74</td>
+								<td>1元/度</td>
+                              <td> <input class = "click"type="submit" value="缴费"></td>
+								
+							<tr>
+</body>
+</html>

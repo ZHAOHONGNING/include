@@ -1,0 +1,14 @@
+package javaEE;
+
+public class ant {
+	void test(){
+		System.out.println("aaa");
+	}
+
+	void test (int i ){
+		
+	}
+	void test(String str){
+		
+	}
+}

@@ -1,0 +1,21 @@
+package com.zhao.cn;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class EmpAction {
+	@RequestMapping("/emp.action")
+	public Emp batch(Model model,int id){
+		Emp emp = new Emp("shaigugigu", 465.0);
+		
+		
+		return emp;
+		
+		
+	}
+
+}

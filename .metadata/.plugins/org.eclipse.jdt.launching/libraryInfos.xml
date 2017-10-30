@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="E:\QMDownload\SoftMgr\jre\jdk" version="1.8.0_111">
+<bootpath>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\resources.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\rt.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\sunrsasign.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\jsse.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\jce.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\charsets.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\jfr.jar"/>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\ext"/>
+<entry path="C:\windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="E:\QMDownload\SoftMgr\jre\jdk\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

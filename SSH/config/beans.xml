@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 扫描包设置： -->
+	<context:component-scan base-package="com.atguigu.ssh.crud" />
+
+	<!-- 加载外部资源文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- C3P0 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- Spring框架提供了FactoryBean接口的实现类org.springframework.orm.hibernate4.LocalSessionFactoryBean 
+		来创建SessionFactory对象。 Spring整合Hibernate配置： 整合部分配置：只是管理了连接数据库信息，其他信息依然由hibernate.cfg.xml文件进行管理 
+		（推荐） 整合全部配置：hibernate.cfg.xml就可以删除了 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		
+	</bean>
+
+
+	<!-- 事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 开启基于注解的声明式事务。@Transactional transaction-manager="transactionManager" 
+		默认值，可以省略 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+
+
+</beans>

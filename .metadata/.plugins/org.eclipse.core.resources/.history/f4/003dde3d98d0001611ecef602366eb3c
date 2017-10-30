@@ -1,0 +1,52 @@
+package com.zhao.Dao;
+
+import java.util.List;
+
+import com.atguigu.bookstore.bean.Page;
+import com.zhao.bean.Book;
+import com.zhao.bean.Pages;
+
+public class BookDaoImp  extends BaseDao<Book>implements BookDao {
+
+	@Override
+	public List<Book> getBooks() {
+		String sql = "select * from books";
+		List<Book> list = getBeanList(sql);
+		return list;
+	}
+
+	@Override
+	public void addBook(Book book) {
+		String sql = "insert into books()values(?????)";
+		int i = update(sql, book.getAuthor(),book.getId(),book.getImgPath(),
+				book.getPrice(),book.getSales(),book.getStock(),
+				book.getTitle());
+	}
+
+	@Override
+	public void deleteBookById(String bookId) {
+		String sql = "delect from books where id = ?";
+		int i = update(sql,bookId);
+
+	}
+
+	@Override
+	public Book getBookById(String bookId) {
+		String sql = "select id from boooks where id = ?";
+		Book book = getBean(sql, bookId);
+		return book;
+	}
+
+	@Override
+	public void updateBook(Book book) {
+		
+
+	}
+
+	@Override
+	public Pages<Book> getPageBooks(Page<Book> page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

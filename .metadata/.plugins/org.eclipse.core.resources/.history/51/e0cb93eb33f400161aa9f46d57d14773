@@ -1,0 +1,26 @@
+package com.zhao.pojo.test;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.junit.Test;
+
+public class TestHibernate {
+
+	@Test
+	public void test() {
+      //加载配置文件
+		Configuration cfg = new Configuration();
+		//调用的方法加载默认的主文件hibernate。cfg。xml
+		 cfg.configure();
+		ServiceRegistryBuilder srb = new ServiceRegistryBuilder();
+		srb.applySettings(cfg.getProperties());
+		ServiceRegistry serviceRegistry = srb.buildServiceRegistry();
+		//创建sessionFactory对象
+		SessionFactory buildSessionFactory = cfg.buildSessionFactory(serviceRegistry);
+		
+		
+	}
+
+}

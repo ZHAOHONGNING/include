@@ -1,0 +1,9 @@
+package com.zhao;
+
+public class CartItem {
+	private Book book;
+	private int count;
+	private double amount;
+	
+
+}

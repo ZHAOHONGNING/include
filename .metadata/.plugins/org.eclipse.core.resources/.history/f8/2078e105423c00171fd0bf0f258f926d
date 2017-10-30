@@ -1,0 +1,7 @@
+package com.atguigu.cpes.service.impl;
+
+import com.atguigu.cpes.service.StudentService;
+
+public class StudentServiceImp implements StudentService{
+
+}

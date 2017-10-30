@@ -1,0 +1,11 @@
+package com.atguigu.cpes.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.atguigu.cpes.service.StudentService;
+
+@Controller
+public class StudentController {
+
+	private StudentService studentService;
+}

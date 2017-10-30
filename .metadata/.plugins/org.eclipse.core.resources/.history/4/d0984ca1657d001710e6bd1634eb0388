@@ -1,0 +1,14 @@
+package COM.zhao;
+
+public class Boy {
+
+	private  Boy boy=null;
+	private Boy(){}
+	public static Boy getInstance(){
+		if(boy==null){
+			return new Boy();
+		}else{
+			return boy;
+		}
+	}
+}

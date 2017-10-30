@@ -1,0 +1,14 @@
+package COM.zhao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Lazy {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

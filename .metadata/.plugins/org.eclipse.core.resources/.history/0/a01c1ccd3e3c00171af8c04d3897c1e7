@@ -1,0 +1,22 @@
+package com.zhao.service.imp;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.zhao.bean.User;
+import com.zhao.dao.UserDao;
+import com.zhao.service.UserService;
+
+@Service
+public class UserServiceImp implements UserService {
+	@Autowired
+	private UserDao userDao;
+
+	@Override
+	public List<User> query() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

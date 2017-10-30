@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="queryAllBook" class="com.zhao.action.BookAction" method="queryAll">
+			<result>/list.jsp</result>
+		</action>
+		<action name="remove" class="com.zhao.action.BookAction" method="remove">
+			<result>/list.jsp</result>
+		</action>
+		<action name="update" class="com.zhao.action.BookAction" method="update">
+			<result>/upDate.jsp</result>
+		</action>
+		<!--重定向到queryALL方法重新查询  -->
+		<action name="save" class="com.zhao.action.BookAction" method="save">
+			<result name="list" type="redireAction">queryAllBook</result>
+		</action>
+		<action name="queryAllBook" class="com.zhao.action.BookAction" method="queryAll">
+			<result>/list.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

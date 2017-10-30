@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;c0m.teamway.zhao.IOFile.java&apos; to &apos;ZHAOFile.java&apos;&#x0D;&#x0A;- Original project: &apos;FileTest&apos;&#x0D;&#x0A;- Original element: &apos;c0m.teamway.zhao.IOFile.java&apos;&#x0D;&#x0A;- Renamed element: &apos;c0m.teamway.zhao.ZHAOFile.java&apos;" description="Rename compilation unit &apos;IOFile.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;c0m.teamway.zhao{IOFile.java" name="ZHAOFile.java" references="false" stamp="1508911552191" version="1.0"/>
+</session>

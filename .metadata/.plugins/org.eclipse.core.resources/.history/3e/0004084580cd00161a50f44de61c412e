@@ -1,0 +1,16 @@
+package com.atguigu.bookstore.service.impl;
+
+import java.util.List;
+
+import com.atguigu.bookstore.bean.Book;
+import com.atguigu.bookstore.service.BookService;
+
+public class BookServiceImp implements BookService {
+
+	@Override
+	public List<Book> getBook() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

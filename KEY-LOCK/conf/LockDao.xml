@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="COM.ZHAO.DAO.LockDao">
+
+     <resultMap type="COM.ZHAO.BEAN.Lock"  id="mlock">
+     <!--column 对应表中数据 property对应bean类数据  -->
+     <id column="id" property="id"/>
+     <result column="lock" property="lock"/>
+     <association property="key" select="COM.ZHAO.DAO.KeyDao.getKeyById" 
+                                 column="key_id">
+     
+     </association>
+     </resultMap>
+	<select id="getLockById" parameterType="Integer" resultMap="mlock">
+	SELECT * FROM t_lock WHERE id = #{id} 
+	
+	</select>
+</mapper>

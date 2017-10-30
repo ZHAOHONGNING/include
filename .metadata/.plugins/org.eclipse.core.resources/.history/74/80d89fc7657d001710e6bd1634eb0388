@@ -1,0 +1,13 @@
+package COM.zhao;
+
+public class Person {
+
+	static int i;
+	public void get(){
+		System.out.println(i);
+	}
+	public static void main(String[] args) {
+		Person p=new Person();
+		p.get();
+	}
+}

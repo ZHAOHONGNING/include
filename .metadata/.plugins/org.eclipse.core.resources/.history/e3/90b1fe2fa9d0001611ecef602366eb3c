@@ -1,0 +1,91 @@
+package com.zhao.Dao;
+
+import java.util.List;
+
+import com.zhao.bean.Book;
+import com.zhao.bean.Pages;
+
+public class BookDaoImp  extends BaseDao<Book>implements BookDao {
+
+	@Override
+	public List<Book> getBooks() {
+		// 写sql语句
+		String sql = "select id,title,author,price,sales,stock,img_path imgPath from books";
+		List<Book> beanList = getListBean(sql);
+		return beanList;
+	}
+
+	@Override
+	public void addBook(Book book) {
+		// 写sql语句
+		String sql = "insert into books(title,author,price,sales,stock,img_path) values(?,?,?,?,?,?)";
+		upData(sql, book.getTitle(), book.getAuthor(), book.getPrice(), book.getSales(), book.getStokct()
+			);
+		
+	}
+
+	@Override
+	public void deleteBook(String bookId) {
+		// 写sql语句
+		String sql = "delete from books where id = ?";
+		upData(sql, bookId);
+	}
+
+	@Override
+	public Book getBookById(String bookId) {
+		// 写sql语句
+		String sql = "select id,title,author,price,sales,stock,img_path imgPath from books where id = ?";
+		Book bean = getBean(sql, bookId);
+		return bean;
+	}
+
+	@Override
+	public void updateBook(Book book) {
+		// 写sql语句
+		String sql = "update books set title = ? , author = ? , price = ? , sales = ? , stock = ? where id = ?";
+		update(sql, book.getTitle(),book.getAuthor(),book.getPrice(),book.getSales(),book.getStokct(),book.getId());
+	}
+
+	@Override
+	public Page<Book> getPageBooks(Page<Book> page) {
+		
+		//写sql语句
+		String sql = "select count(*) from books";
+		long totalRecord = (long) getSingleValue(sql);
+		//将总记录数设置到page对象中
+		page.setTotalRecord((int)totalRecord);
+		
+		//写sql语句
+		String sql2 = "select id,title,author,price,sales,stock,img_path imgPath from books limit ?,?";
+		List<Book> pageList = getBeanList(sql2, (page.getPageNo()-1)*Page.PAGE_SIZE,Page.PAGE_SIZE);
+		//将集合设置到page对象中
+		page.setList(pageList);
+		return page;
+	}
+
+	@Override
+	public void update(Book book) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Book getBook(String bookId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteBook1(String bookId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Pages<Book> getPageBook(Pages<Book> book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

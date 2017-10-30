@@ -1,0 +1,17 @@
+package com.atguigu.bookstore.dao.impl;
+
+import java.util.List;
+
+import com.atguigu.bookstore.bean.book;
+import com.atguigu.bookstore.dao.BaseDao;
+import com.atguigu.bookstore.dao.bookDao;
+
+public class bookDaoImp extends BaseDao<T> implements bookDao {
+
+	@Override
+	public List<book> getBooks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

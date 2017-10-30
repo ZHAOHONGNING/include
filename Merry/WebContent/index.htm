@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>这是一个祝福</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">老姐</span><br />
+			<span class="space"/><span class="comments">2016—12-24</span><br />
+			<span class="space"/><span class="comments">祝福你平安夜快乐</span><br />
+			<span class="space"/><span class="comments">--你的男神老弟</span><br />
+			 老弟= <span class="keyword">赵</span> 洪宇<br />
+			老姐 = <span class="keyword">赵</span> 驴<br />
+			<span class="comments"> 打小儿就在一起玩. </span><br />
+			没想到现在竟然隔了4000多里地;<br />
+			<span class="comments">平时太爱学习了，都没时间陪你玩.</span><br />
+			上了大学了，有时间了，你却不在身边了;<br />
+			<span class="comments">只能用微信聊聊天.</span><br />
+			现在更是忙的连聊天的时间都没有;<br />
+			<span class="comments">其实挺内疚的.</span><br />
+			感觉相处的时间越来越少了;<br />
+			<span class="comments">我只是希望你一直记着，</span><br />
+			<span class="comments">你有一个老弟是男神.</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			Merry Christmas;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的老姐，有感动到一点点吗？<br/>
+					如果有的话，可以发给我一份红包<br/>
+					让我分享一下你的感动
+				</div>
+				<div id="loveu">
+					永远爱你的。<br/>
+					<div class="signature">-老弟</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2016, 12, 25);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>

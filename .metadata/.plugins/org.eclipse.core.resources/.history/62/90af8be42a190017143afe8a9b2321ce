@@ -1,0 +1,15 @@
+package zhao_311;
+
+public class B {
+	private static A a;
+	
+	public B(A a){
+		this.a = a;
+	}
+	public static void main(String[] args) {
+		A jhv = null;
+		//应该是包含了A类的特性但是还是属于B类
+		new B(jhv);
+	}
+
+}

@@ -1,0 +1,23 @@
+package c0m.teamway.zhao;
+
+import java.io.File;
+import java.io.IOException;
+
+public class ZHAOFile {
+	public static void main(String[] args) {
+
+		String path = "E:\\DoyoGames\\Games\\hh.log";
+		File file =new File(path);
+		if(!file.isDirectory()){
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+//		System.out.println(file.getName());
+//		System.out.println(file.getAbsolutePath());
+	}
+
+}

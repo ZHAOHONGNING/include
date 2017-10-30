@@ -1,0 +1,31 @@
+package teamway.shenzhen.db;
+
+
+public class WOtest implements Runnable {
+	static WOtest w=new WOtest();
+	static dbClientImp db = new dbClientImp();
+	public static void main(String[] args) {
+
+		db.initDB("127.0.0.1", 3306, "root", "74110", "test", 5, 10);
+		for (int i = 0; i <= 12; i++) {
+
+			Thread t = new Thread(w);
+			t.start();
+		}
+
+	} 
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		String sql1 = "select * from huhu ";
+		Object[] queryObject = db.queryObject(sql1);
+		for (Object object : queryObject) {
+			System.out.println(object);
+		}
+		System.out.println(Thread.currentThread().getName());
+		//db.help();
+		
+	}
+	}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- dtd文件是xml文档的约束文件。这个约束文件就是规定这个xml能写什么标签的。 有个这个约束就知道能写什么？ 只要这个约束文件的位置被正确指向，就会有提示。 
+	给eclipse配置http://mybatis.org/dtd/mybatis-3-config.dtd约束文件的所在位置 在jar包中的org.apache.ibatis.builder.xml下有，直接拿出来 -->
+<!-- resources一定是资源文件位置，从类路径下开始的 -->
+<configuration>
+	<properties resource="connection.properties">
+
+	</properties>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- 配置数据源。使用连接池技术。连接池使用mybatis自己内置的连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="LockDao.xml" />
+		<mapper resource="KeyDao.xml" />
+	</mappers>
+
+
+</configuration>

@@ -1,0 +1,14 @@
+package com.atguigu.cpes.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atguigu.cpes.dao.MemberDao;
+import com.atguigu.cpes.servic.MemberService;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	@Autowired
+	private MemberDao memberDao;
+}

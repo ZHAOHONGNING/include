@@ -1,0 +1,6 @@
+package com.huhu;
+
+public interface TestHuhu {
+
+	public String getFile();
+}

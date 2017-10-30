@@ -1,0 +1,26 @@
+package com.zhao.imp;
+
+import com.zhao.Dao.UserDao;
+import com.zhao.bean.User;
+
+public class UserDaoImp implements UserDao {
+
+	@Override
+	public User login(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean regist(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void save(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

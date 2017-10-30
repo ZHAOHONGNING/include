@@ -1,0 +1,10 @@
+package com.atguigu.cpes.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.atguigu.cpes.service.StudentService;
+
+public class StudentServiceImp implements StudentService{
+     @Autowired
+	private StudentDao studentDao;
+}

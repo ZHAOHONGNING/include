@@ -1,0 +1,19 @@
+package sysout;
+
+public class Person {
+	static Person person = new Person();
+	
+	public void test(){
+		System.out.println("是谁调用我");
+		this.test1();
+	}
+	public void test1(){
+		System.out.println("我就是我");
+	}
+	
+	public static void main(String[] args) {
+		person.test();
+		
+	}
+
+}

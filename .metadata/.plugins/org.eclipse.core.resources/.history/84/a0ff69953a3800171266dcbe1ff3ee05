@@ -1,0 +1,5 @@
+package com.atguigu.cpes.service.impl;
+
+public class RoleServiceImp {
+
+}

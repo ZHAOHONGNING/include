@@ -1,0 +1,11 @@
+package com.teamway.util;
+
+import java.io.File;
+
+public class dghfbfdshrfh {
+public static void main(String[] args) {
+	File file = new File("E:\\DoyoGames\\Games\\huhu.log");
+	File file = new File("E:\\DoyoGames\\Games\\h.log");
+	
+}
+}

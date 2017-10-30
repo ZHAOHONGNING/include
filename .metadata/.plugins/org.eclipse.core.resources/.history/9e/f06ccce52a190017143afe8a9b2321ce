@@ -1,0 +1,6 @@
+package zhao_311;
+
+public interface View {
+
+	void mianji();
+}

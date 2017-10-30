@@ -1,0 +1,23 @@
+package com.zhao;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+import com.sun.javafx.collections.MappingChange.Map;
+
+public class Cart implements Serializable {
+	
+	private Map<String , CartItem> map = new link
+	private int totalcount;
+	private double totalAmount;
+	
+	/*
+	 * 清空购物车
+	 */
+	public void clear(){
+	
+	}
+	
+
+}

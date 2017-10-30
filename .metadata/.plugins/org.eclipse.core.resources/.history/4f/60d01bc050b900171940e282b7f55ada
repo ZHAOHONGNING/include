@@ -1,0 +1,38 @@
+package c0m.teamway.zhao;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+public class ZHAOFile {
+	public static void main(String[] args) {
+
+		String path = "E:\\QMDownload";
+		File file = new File(path);
+		// if(!file.isDirectory()){
+		// try {
+		// file.createNewFile();
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		//
+		// }
+		if (!file.exists()) {
+			file.mkdirs();
+		}
+		File[] listFiles = file.listFiles();
+		for (File file2 : listFiles) {
+			System.out.println(file2.getName());
+		}
+		File[] files = file.listFiles();
+		for (File file2 : files) {
+			System.out.println(file2);
+		}
+		//System.out.println(files+"wocao"+listFiles);
+		System.out.println(new Date(file.lastModified()));
+		System.out.println(file.getName());
+		System.out.println(file.getAbsolutePath());
+	}
+
+}

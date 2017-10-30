@@ -1,0 +1,154 @@
+package com.teamway.util;
+
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.StreamHandler;
+
+public class LINWEILOG {
+
+	/**
+	 * Zentech-Inc Copyright (C) 2017 All Rights Reserved.
+	 */
+
+	/*
+	 * 閺冦儱绻旂粵澶岄獓閿涳拷EMERG 8 // 缁崵绮烘稉宥呭讲閻拷ALERT 7 // 鐠�附濮ら敍灞肩皑閹懎鍑＄紒蹇撳絺閻拷CRIT 6
+	 * // 妫板嫰妲婚敍灞肩皑娴犺泛姘ㄧ憰浣稿絺閻拷ERR 5 // 閺咁噣锟介柨娆掝嚖 WARNING 6 // 鐠�箑鎲�NOTICE 3 //
+	 * 閹绘劙鍟嬫穱鈩冧紖 INFO 2 // 闁氨鐓℃穱鈩冧紖 DEBUG 1 // 鐠嬪啳鐦猾缁樻）韫囷拷 NONE 0 //
+	 * 娑撳秷顔囪ぐ鏇熸）韫囷拷
+	 */
+
+	/*
+	 * 閺冦儱绻旂猾锟介弮銉ョ箶鐠佹澘缍嶉弽鐓庣础: [2017-10-01 08:00:01][INFO] ......
+	 * 濮ｅ繋閲滈弮銉ョ箶閺傚洣娆㈢搾鍛扮箖鐟欏嫬鐣炬径褍鐨崥搴礉闂囷拷顩︽禍褏鏁撻弬鐗堟）韫囨鏋冩禒韬诧拷閼颁焦妫╄
+	 * 箛妤佹瀮娴犲爼鍣搁弬鏉挎嚒閸氬稄绱濋崷銊︽瀮娴犺泛鎮曢崥搴㈠潑閸旂姴缍嬮崜宥嗘闂傛番锟�娓氬顩�
+	 * alarm.log.20171023_115403.log
+	 * 瑜版挻妫╄箛妤�摠閺�墽娲拌ぐ鏇氳厬閺傚洣娆㈢搾鍛毉妫板嫬鐣炬径褍鐨崥搴礉闂囷拷顩﹂崚鐘绘珟閺堬拷妫弮銉ョ箶閵嗭拷
+	 */
+
+	/*
+	 * 閸掓繂顫愰崠鏍ㄦ）韫囷拷path - 閺冦儱绻旂�妯绘杹閻╊喖缍�logName - 閺冦儱绻旈弬鍥︽閸氾拷level -
+	 * 閺冦儱绻旂粵澶岄獓閿涘苯鎮楅棃顣漴iteLog娑擃厼鐨禍搴㈩劃缁涘楠囬惃鍕）韫囨鍏樻稉宥囨暏鐠佹澘缍� totalSize -
+	 * 閺冦儱绻旈惄顔肩秿娑擃厽澧嶉張澶嬫）韫囨銇囩亸锟絝ileSize - 濮ｅ繋閲滈弮銉ョ箶閺傚洣娆㈡径褍鐨�
+	 */
+	private static final String DATE_PATTERN_FULL_ = "yyyyMMddmmss";
+	private String path;
+	private String logName;
+	private int level;
+	private int totalSize;
+	private int fileSize;
+	private Map<Integer, String> logQueue = new HashMap<Integer, String>();
+	private Map<String, Integer> logDetail = new HashMap<String, Integer>();
+	private int head;
+	private int tail;
+	private int size;
+
+	public boolean initLog(String path, String logName, int level, int totalSize, int fileSize) {
+		this.path = path;
+		this.logName = logName;
+		this.level = level;
+		this.totalSize = totalSize;
+		this.fileSize = fileSize;
+		head = 0;
+		tail = 0;
+		size = 0;
+		return true;
+	}
+
+	/*
+	 * 閸愭瑦妫╄箛锟絣evel - 閺堫剚娼弮銉ョ箶缁涘楠�log -
+	 * 閺冦儱绻旀穱鈩冧紖閿涘本鏁為幇蹇旂槨閺夆剝妫╄箛妤�倵闂堛垽娓剁憰浣瑰床鐞涳拷
+	 */
+	public void writeLog(int level, String... log) throws Exception {
+		OutputStreamWriter writer = null;
+		File file = null;
+		FileOutputStream fop = null;
+		int logSize = 0;
+		if (this.level > level) {
+			return;
+		}
+		for (String l : log) {
+			String currencyLogName = "";
+			Integer currencyLogSize = 0;
+
+			int currencySize = l.getBytes().length;
+
+			if (currencySize + size > totalSize) {
+				String headLog = logQueue.get(new Integer(head));
+				size -= logDetail.get(headLog);
+				head++;
+				// 鐏忓攧eadLog閸氬秶袨閻ㄥ嫭妫╄箛妤�灩闂勶拷
+				File delFile = new File(headLog);
+				if (!delFile.exists()) {
+					return;
+				}
+				delFile.delete();
+			}
+			String tailLogName = logQueue.get(new Integer(tail));
+
+			if (tailLogName == null) {
+				file = new File(path + logName);
+				currencyLogSize = currencySize;
+
+			} else {
+				logSize = logDetail.get(tailLogName).intValue();
+
+				SimpleDateFormat sdf = null;
+				String format = null;
+				if (logSize + currencySize > fileSize) {
+					tail++;
+					File tailFile = new File(path + tailLogName);
+					// System.out.println(tailFile);
+					// 鐏忓敆ailFile閻ㄥ嫭鏋冩禒鍫曞櫢閸涜棄鎮�
+					Date date = new Date();
+					sdf = new SimpleDateFormat(DATE_PATTERN_FULL_);
+					format = sdf.format(date);
+					String newTailLogName = tailLogName + format + ".log";
+					File newtailFile = new File(path + newTailLogName);
+					boolean b = tailFile.renameTo(newtailFile);
+					System.out.println(b);
+					file = new File(path + logName);
+					currencyLogSize = currencySize;
+				} else {
+					file = new File(path + tailLogName);
+					currencyLogSize = logSize + currencySize;
+				}
+
+			}
+			logQueue.put(tail, logName);
+			logDetail.put(logName, currencyLogSize);
+			size += currencySize;
+			if (!file.exists()) {
+				file.createNewFile();
+
+			}
+			fop = new FileOutputStream(file, true);
+			writer = new OutputStreamWriter(fop, "UTF-8");
+			writer.append("[" + format + "]");
+			writer.append("\r\n");
+			writer.close();
+			fop.close();
+
+		}
+
+	}
+
+	// 闁插秵鏌婄拋鍓х枂閺冦儱绻旈弬鍥︽缁涘楠�
+	public void resetLevel(int level) {
+		this.level = level;
+
+	}
+
+	// 鐠佸墽鐤嗛弰顖氭儊閸︺劍甯堕崚璺哄酱鏉堟挸鍤�
+	public void setSonsoleOutput(boolean b) {
+		// 閹貉冨煑閸欑増妲搁崥锕佺翻閸戠尨绱甸敍锟� //閻ф儳瀹虫禍鍡曠娑撳顕╅弰顖濐嚢閸欐牗绁﹂敍灞肩稻閺勵垵绻栨稉顏呮煙濞夋洘鐥呭ù浣告櫓
+		// 鏉╂瑤閲滈弶銉ょ瑝娴滃棴绱欓幍瀣З鐏忓繒绫傜紒鎿勭礆
+		if (b) {
+
+		}
+	}
+
+}

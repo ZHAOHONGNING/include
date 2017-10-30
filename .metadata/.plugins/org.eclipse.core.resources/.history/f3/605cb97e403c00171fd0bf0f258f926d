@@ -1,0 +1,10 @@
+package com.atguigu.cpes.servic;
+
+/**
+ * 会员服务对象
+ * @author 18801
+ *
+ */
+public interface MemberService {
+
+}

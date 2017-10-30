@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489025359019_2" label="hidden" name="hidden">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Copy (2) of X" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/power" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Copy of X" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ShuiDian" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/13.SpringTx_transactionXML" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BookStore04" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BookStore05" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489025592380_3" label="Working" name="Working">
+<item elementID="=LogTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Client" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1489735868411_4" label="ImportVlaue" name="ImportVlaue">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/power" type="4"/>
+<item elementID="=LogTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1492046285467_5" label="Empty" name="Empty"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1508919729077_6" label="ZHAOTest" name="ZHAOTest">
+<item elementID="=ZHAOFile" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ThreadTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FileTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1480382389043_0" label="Window Working Set" name="Aggregate for window 1480382389043"/>
+</workingSetManager>

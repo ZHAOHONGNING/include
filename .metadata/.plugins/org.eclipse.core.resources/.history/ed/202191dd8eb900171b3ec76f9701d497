@@ -1,0 +1,15 @@
+package com.teamway.util;
+
+import java.io.IOException;
+import java.util.logging.Level;
+
+public class LogTest {
+
+	public static void main(String[] args) throws SecurityException, IOException {
+		String path = "E:\\DoyoGames\\Games";
+
+		LINWEILOG linwei=new LINWEILOG();
+		linwei.initLog(path, "hu", 1,1024, 1);
+		linwei.writeLog(2, "dsfsdfsg");
+	}
+}

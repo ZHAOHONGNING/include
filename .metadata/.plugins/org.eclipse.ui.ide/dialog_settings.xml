@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="F:\百度云\Spring框架\SpringMVC\SpringMVC06_异常处理_国际化\资料\9.SpringMVC_exception"/>
+			<item value="F:\百度云\Spring框架\SpringMVC\SpringMVC06_异常处理_国际化\资料\8.SpringMVC_i18n"/>
+			<item value="F:\百度云\Spring框架\SpringMVC\SpringMVC05_数据绑定\资料\6.SpringMVC_CRUD_dataBinder"/>
+			<item value="F:\百度云\Spring框架\SpringMVC\SpringMVC03_数据输出\资料\3.SpringMVC_03_dataOut"/>
+			<item value="F:\百度云\Spring框架\SpringMVC\SpringMVC01\资料\1.SpringMVC_01_HelloWorld"/>
+			<item value="F:\百度云\Spring框架\springframe\Spring03_AOP\资料\8.SpringAOP_pre"/>
+			<item value="F:\百度云\mabatis\MyBatis03\资料\8.SpringMVC_MyBatis"/>
+			<item value="F:\百度云\mabatis\MyBatis03\资料\7.MyBatis_cache"/>
+			<item value="F:\百度云\mabatis\MyBatis02\资料\6.MyBatis_association"/>
+			<item value="F:\百度云\mabatis\MyBatis02\资料\5.MyBatis_DynamicSQL"/>
+			<item value="F:\百度云\林伟WEB\day17\source\BookStore06"/>
+			<item value="F:\百度云\林伟WEB\day15\source\Web10_Session_Ex"/>
+			<item value="F:\百度云\林伟WEB\day09\source\Web04_JSP"/>
+			<item value="E:\QMDownload\SoftMgr\include\2017-3-25-X"/>
+			<item value="D:\BaiduYunDownload\传智播客java\day66-batis\代码\mybatis-day01"/>
+			<item value="D:\BaiduYunDownload\传智播客java\day64-springMVC\springmvc-day01资料\代码\emp"/>
+			<item value="D:\BaiduYunDownload\传智播客java\day64-springMVC"/>
+			<item value="D:\BaiduYunDownload\林伟框架\Spring框架\SpringMVC\SpringMVC02_入参处理\资料\2.SpringMVC_02_request"/>
+			<item value="D:\BaiduYunDownload\传智播客java\day64-springMVC\springmvc-day01资料\代码\springmvc-day01"/>
+			<item value="D:\BaiduYunDownload\传智播客java\day39_SSH项目\hr_sys"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="308" key="DIALOG_X_ORIGIN"/>
+		<item value="180" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="338" key="DIALOG_X_ORIGIN"/>
+			<item value="59" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+</section>

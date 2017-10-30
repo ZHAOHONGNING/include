@@ -1,0 +1,26 @@
+package com.zhao.cn;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractCommandController;
+
+public class DpetAction extends AbstractCommandController{
+	
+	public DpetAction() {
+		this.setCommandClass(Dept.class);
+	}
+
+	@Override
+	protected ModelAndView handle(HttpServletRequest request, HttpServletResponse arg1, Object obj, BindException arg3)
+			throws Exception {
+		ModelAndView m = new ModelAndView();
+		Dept dept = (Dept)obj;
+		System.out.println(dept);
+		//JdbcUtil.save(dept);
+		return m;
+	}
+
+}

@@ -1,0 +1,14 @@
+package teamway.shenz;
+
+import java.io.File;
+import java.io.FileOutputStream;
+
+public class HUHU {
+	public static void main(String[] args) {
+
+		//写入文件
+		String path="C:\Users\\赵洪宁\\Desktop\\hu";
+		File bing=new File();
+		FileOutputStream fps=new FileOutputStream(bing);
+	}
+}

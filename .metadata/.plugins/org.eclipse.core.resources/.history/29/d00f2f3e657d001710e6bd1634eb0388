@@ -1,0 +1,9 @@
+package COM.zhao;
+
+public class Person {
+
+	int i;
+	public void get(){
+		System.out.println(i);
+	}
+}

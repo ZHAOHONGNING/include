@@ -1,0 +1,16 @@
+package com.huhu;
+
+
+import javax.xml.ws.Endpoint;
+
+import org.junit.Test;
+
+public class App {
+
+	@Test
+	public void test() {
+		TestHuhu test = new TestHUHUinf();
+		Endpoint.publish("http://localhost8080/huhu", test);
+	}
+
+}

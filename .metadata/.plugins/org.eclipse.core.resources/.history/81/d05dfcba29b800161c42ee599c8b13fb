@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.7.2.js"></script>
+<script type="text/javascript">
+        $(function{
+        	//添加button，再添加响应函数
+        	$("button").click(function{
+        		alert("你好");
+        		
+        	})
+        	
+        })
+
+</script>
+</head>
+<body>
+   <button>clickme</button>
+</body>
+</html>

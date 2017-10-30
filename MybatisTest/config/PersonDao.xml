@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 这个文件的作用就是相当于对IPersonDao的每一个方法的实现 namespace:必须是接口的全类名，这样MyBatis才知道这个配置文件是相当于对哪个接口的实现 -->
+<!-- <mapper namespace="com.atguigu.dao.PersonDao"> public void savePerson(Person 
+	person); 定义一个插入操作 id=""：一定要是方法名 parameterType：指定这个方法的传入的参数类型：写类型全类名 <insert 
+	id="savePerson" parameterType="com.atguigu.bean.Person"> 标签体内直接写SQL语句即可，SQL的分号一般不要携带 
+	#{属性名}：取出传入的对象的这个属性的值 INSERT INTO tbl_person(NAME,age,birth,registerTime,salary) 
+	VALUES(#{name},#{age},#{birth},#{registerTime},#{salary}) </insert> </mapper> -->
+<mapper namespace="com.zhao.dao.PersonDao">
+	<!-- <select id="getPerson" parameterType="com.zhao.dao.PersonDao">
+		select * from t_person where id = #{id};
+	</select> -->
+	<insert id="insert" parameterType="com.zhao.bean.Person" useGeneratedKeys="true" keyProperty="id"></insert>
+	<select id="getPerson" parameterType="Integer" 
+	
+	resultType="com.zhao.bean.Person" >
+	select * from t_person <include refid="text"/>= #{id};
+	</select>
+	<sql id="text">
+	where id 
+	</sql>
+</mapper>

@@ -1,0 +1,17 @@
+package sysout;
+
+public class Person {
+	
+	
+	public Person() {
+	System.out.println("人生若无悔，那该多无趣啊！");	// TODO Auto-generated constructor stub
+	}
+	public Person(int i){
+		System.out.println("null"+i);
+	}
+	public static void main(String[] args) {
+		Person person = new Person();
+		
+	}
+
+}

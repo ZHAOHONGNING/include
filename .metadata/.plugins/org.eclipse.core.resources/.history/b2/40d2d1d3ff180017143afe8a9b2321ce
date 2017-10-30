@@ -1,0 +1,26 @@
+package zhao_311;
+
+import sun.applet.Main;
+
+public class Student extends Thread {
+	
+	
+	public void show1(){
+		for(int i=0;i<12;i++){
+			System.out.println("li:"+i);
+		}
+	}
+	public void show2(){
+		for(int i=0;i<12;i++){
+			System.out.println("zhang:"+i);
+		}
+	public static void main(String[] args) {
+	Student s1 = new Student();	
+	Student s2 = new Student();	
+	s1.show1();
+	s2.show2();
+	
+	
+	}
+
+}

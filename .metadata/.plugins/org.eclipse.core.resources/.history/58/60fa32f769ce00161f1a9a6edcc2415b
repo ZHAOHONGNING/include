@@ -1,0 +1,5 @@
+package com.zhao.Dao;
+
+public interface UserDao {
+
+}

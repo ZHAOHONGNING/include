@@ -1,0 +1,13 @@
+package com.zhao.service;
+
+import com.zhao.bean.User;
+
+public interface UserService {
+
+	//登陆
+		public User login(User user);
+		//注册
+		public boolean regist(User user);
+		//保存用户
+		public void save(User user);
+}

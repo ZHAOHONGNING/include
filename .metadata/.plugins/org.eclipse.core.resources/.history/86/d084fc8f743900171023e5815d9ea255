@@ -1,0 +1,37 @@
+package com.atguigu.cpes.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.atguigu.cpes.bean.Menu;
+import com.atguigu.cpes.service.MemberService;
+import com.atguigu.cpes.service.MenuService;
+import com.atguigu.cpes.service.PermissionService;
+
+@Controller
+@RequestMapping("/permission")
+public class PermissionController {
+
+	@Autowired
+	private PermissionService permissionService;
+	@Autowired
+	private MenuService menuService;
+	@RequestMapping("/tree")
+	public String tree(){
+		//查询菜单数据形成父子关系
+		List<Menu> list = menuService.queryAll();
+		Map<Integer, Menu> map = new HashMap<>();
+		for (Menu menu : list) {
+			map.put(menu.getId(), menu);
+		}
+		List<Menu> menulist = new ArrayList<>();
+		
+		return "permission/tree";
+	}
+}

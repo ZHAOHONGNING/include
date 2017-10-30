@@ -1,0 +1,28 @@
+package com.zhao.Dao;
+
+import java.util.List;
+
+import com.zhao.bean.Book;
+import com.zhao.bean.Pages;
+
+public interface BookDao {
+
+	//获取所有图书，得到的是list集合
+	public List<Book> getBooks();
+	
+	//插入一本书
+	public void addBook(Book book);
+	
+	//图书的更新
+	public void update(Book book);
+	
+	//根据图书的ID查到一本图书所以得到一本图书。返回值是BOOK类型
+	public Book getBook(String bookId);
+	
+	//根据图示ID删除一本图书
+	public void deleteBook(String bookId);
+	
+	//获取分页图书的信息
+	public Pages<Book> getPageBook(Pages<Book> book);
+	
+}

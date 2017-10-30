@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="emp" extends="struts-default">
+	<!--全局视图  -->
+	<global-results >
+	<result name="success">/index.jsp</result>
+	<result name="login">/login.jsp</result>
+	<!-- 全局视图中错误视图的配置 -->
+	<result name="null">error/null.jsp</result>
+	<result name="error">error/error.jsp</result>
+	</global-results>
+	<!--全局错误视图配置 根据映射关系错误视图的
+	result会自动去找全局试图的result然后匹配 -->
+	<global-exception-mappings>
+	<exception-mapping result="null" exception="java.lang.NullPointerException"></exception-mapping>
+	<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+	</global-exception-mappings>
+		<!-- 因为action的实体类交给spring处理所有直接ref“id” -->
+		
+		<action name="emp_*" class="employeeAction">
+		<!--  列表展示-->
+			<result name="list">/web-InF/list.jsp</result>
+			<!--进入添加页面  -->
+			<result  name="add">/web-InF/add.jsp </result>
+			<!-- t添加成功进入列表展示跳转到action= “emp_list然后是指定的list方法执行查询” ，-->
+			<result  name="listAction" type="redirectAction">emp_list </result>
+			<result  name="edit" type="redirectAction">/web-IF/edit.jsp </result>
+			
+		</action>
+		<action name="admin_*" class = "com.zhao.action.AdminAction" method="{1}">
+		<result name="listFaild">/index.jsp</result>
+		<result name="">/index.jsp</result>
+		
+		</action>
+		
+
+	</package>
+
+</struts>

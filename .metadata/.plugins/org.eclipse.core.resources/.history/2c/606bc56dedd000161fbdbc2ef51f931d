@@ -1,0 +1,9 @@
+package javaEE;
+
+public class boy extends Student{
+
+	public boy(int i) {
+		super(11);
+		// TODO Auto-generated constructor stub
+	}
+}

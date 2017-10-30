@@ -1,0 +1,17 @@
+package c0m.teamway.zhao;
+
+import java.io.File;
+
+public class ZHAOFile {
+	public static void main(String[] args) {
+
+		String path = "E:\\DoyoGames\\Games\\huh";
+		File file = new File(path);
+		if(!file.exists()){
+			file.mkdirs();
+		}
+		System.out.println(file.getName());
+		System.out.println(file.getAbsolutePath());
+	}
+
+}

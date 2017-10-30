@@ -1,0 +1,29 @@
+package com.zhao;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractCommandController;
+
+public class DeptAction  extends AbstractCommandController{
+	public DeptAction() {
+		// TODO Auto-generated constructor stub
+	this.setCommandClass(Dept.class);
+	}
+	@Override
+	protected ModelAndView handle(HttpServletRequest request, HttpServletResponse arg1, Object obj, BindException arg3)
+			throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView m = new ModelAndView();
+		Dept dept = (Dept)obj;
+		System.out.println(dept);
+		m.addObject("key", dept);
+		m.setViewName("/index.jsp");
+		JDBCUtil.save(dept);
+		
+		return m;
+	}
+
+}

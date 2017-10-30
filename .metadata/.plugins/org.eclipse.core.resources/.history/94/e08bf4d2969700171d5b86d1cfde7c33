@@ -1,0 +1,9 @@
+package com.huhu;
+
+import javax.jws.WebService;
+
+@WebService
+public interface TestHuhu {
+
+	public String getFile();
+}

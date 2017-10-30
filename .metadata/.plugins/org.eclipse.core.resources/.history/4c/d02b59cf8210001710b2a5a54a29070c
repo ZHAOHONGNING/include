@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="div">
+		<!-- 这是我封装的图片,辛苦泡椒姐姐了，因为不能把图片传过去所以你就假装有图片 -->
+		<img src="qq.png" alt="扫一扫" id="sao" style="display: none" />
+	</div>
+
+	
+		<script>
+		/*
+		
+		*/
+			 $(function() {
+				$(".click").click(function() {
+				alert("dffgds");
+			
+				$(this).val("已缴费");
+				});
+			}); 
+		
+		</script>
+		<table width="100%">
+
+			<thead>
+				<tr>
+
+					<th>序号</th>
+					<th>寝室号</th>
+					<th>寝室长</th>
+					<th>电话</th>
+					<th>班级</th>
+					<th>本月已用（度）</th>
+					<th>应缴金额</th>
+					<th>单价</th>
+					<th>缴存确认</th>
+					
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>309</td>
+					<td>赵洪宁</td>
+					<td>18397856789</td>
+					<td>康复2班</td>
+					<td>74</td>
+					<td>74</td>
+					<td>1元/度</td>
+					<td><input class="click" type="submit" value="缴费"></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>105</td>
+					<td>吴涛</td>
+					<td>18378456789</td>
+					<td>通信4班</td>
+					<td>94</td>
+					<td>94</td>
+					<td>1元/度</td>
+					<td><input class="click" type="submit" value="缴费"></td>
+
+				</tr>
+		</table>
+
+	</div>
+</body>
+</html>

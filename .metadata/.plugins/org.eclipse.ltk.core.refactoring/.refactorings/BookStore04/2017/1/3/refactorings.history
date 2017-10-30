@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CartIttem.java&apos; to &apos;BookStore05/src/com.atguigu.bookstore.bean&apos;&#x0D;&#x0A;- Original project: &apos;BookStore04&apos;&#x0D;&#x0A;- Destination element: &apos;BookStore05/src/com.atguigu.bookstore.bean&apos;&#x0D;&#x0A;- Original element: &apos;com.atguigu.bookstore.bean.CartIttem.java&apos;" description="Copy compilation unit" destination="=BookStore05/src&lt;com.atguigu.bookstore.bean" element1="/src&lt;com.atguigu.bookstore.bean{CartIttem.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1484533395333" units="1" version="1.0"/>
+</session>
